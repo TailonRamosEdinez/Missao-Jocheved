@@ -5,18 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perguntas Frequentes · Missão Jocheved</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/faq.css" />
   </head>
   <body>
     <div class="page-shell">
-      <section class="glass-card page">
-        <h1>Perguntas frequentes</h1>
-        <p>Este espaço é ideal para organizar dúvidas comuns, respostas curtas e uma estrutura simples de apoio ao visitante.</p>
-        <ul>
-          <li>O que é a Missão Jocheved?</li>
-          <li>Como posso colaborar?</li>
-          <li>Onde encontrar os conteúdos?</li>
-        </ul>
+      <section class="page faq-page">
+        <a class="btn btn-secondary page-back-link" href="../index.html">← Voltar ao início</a>
+
+        <div class="faq-sidebar">
+          <h1>Perguntas</h1>
+          <p class="faq-intro">Organize suas dúvidas por fonte e mantenha a comunicação mais clara.</p>
+
+          <nav class="faq-nav" aria-label="Categorias de perguntas">
+            <button class="faq-link active" data-target="nosas" type="button">Perguntas feitas por nós</button>
+            <button class="faq-link" data-target="outros" type="button">Perguntas de outros</button>
+          </nav>
+        </div>
+
+        <div class="faq-content">
+          <section id="nosas" class="faq-block active-block">
+            <h2>Perguntas feitas por nós</h2>
+            <div class="faq-item">
+              <h3>O que é a Missão Jocheved?</h3>
+              <p>É um espaço de reflexão, ensino e acolhimento, com conteúdo espiritual e uma proposta de crescimento.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Como posso colaborar?</h3>
+              <p>Você pode participar com oração, apoio, sugestões ou compartilhando mensagens e conteúdos.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Onde estão os conteúdos?</h3>
+              <p>Os conteúdos principais ficam organizados em mídia, perguntas e páginas de apoio do site.</p>
+            </div>
+          </section>
+
+          <section id="outros" class="faq-block">
+            <h2>Perguntas de outros</h2>
+            <div class="faq-item">
+              <h3>Gostaria de ver mais estudos bíblicos?</h3>
+              <p>Sim. Esse espaço pode crescer com mais materiais teológicos, reflexões e conteúdos de apoio.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Posso sugerir temas?</h3>
+              <p>Claro. Sugestões ajudam a construir uma experiência mais útil e relevante para quem visita.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Tem espaço para perguntas pessoais?</h3>
+              <p>Sim, esse canal pode expandir para perguntas mais diretas e respostas mais humanas.</p>
+            </div>
+          </section>
+        </div>
       </section>
     </div>
+
+    <script src="../assets/js/faq.js"></script>
   </body>
 </html>
