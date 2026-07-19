@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mídia · Missão Jocheved</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/media.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <section class="page">
+        <h1>Mídia</h1>
+        <p>Escolha uma faixa para explorar: Ensino, Testemunho ou Beleza Divina.</p>
+
+        <div class="media-wrapper">
+          <!-- Top 3-segment gradient menu (joined) -->
+          <nav class="menu" role="tablist" aria-label="Categorias">
+            <button class="menu-btn" role="tab" aria-selected="true" aria-controls="ensino" data-target="ensino">
+              <!-- book icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6a2 2 0 0 1 2-2h11v13l-6-2-6 2V6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Ensino</span>
+            </button>
+
+            <button class="menu-btn" role="tab" aria-selected="false" aria-controls="testemunho" data-target="testemunho">
+              <!-- user icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 21v-2a4 4 0 0 1 3-3.87" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Testemunho</span>
+            </button>
+
+            <button class="menu-btn" role="tab" aria-selected="false" aria-controls="beleza" data-target="beleza">
+              <!-- star icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.6 5.3L20 9l-4 3.5L17 20l-5-2.6L7 20l1-7.5L4 9l5.4-1.7L12 2z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Beleza Divina</span>
+            </button>
+
+            <div class="menu-indicator" aria-hidden="true"></div>
+          </nav>
+
+          <!-- Content panels -->
+          <main class="area-conteudo">
+            <section id="ensino" class="conteudo ativo" role="tabpanel">
+              <h2>Ensino</h2>
+              <p>Teologia, estudos bíblicos e reflexões para aprofundar o entendimento.</p>
+            </section>
+
+            <section id="testemunho" class="conteudo" role="tabpanel" hidden>
+              <h2>Testemunho</h2>
+              <p>Relatos de vida e experiências de fé que edificam e inspiram.</p>
+            </section>
+
+            <section id="beleza" class="conteudo" role="tabpanel" hidden>
+              <h2>Beleza Divina</h2>
+              <p>Conteúdos contemplativos, imagens e vídeos que revelam a beleza do divino.</p>
+            </section>
+          </main>
+        </div>
+      </section>
+    </div>
+
+    <script src="../assets/js/media.js"></script>
+  </body>
+</html>

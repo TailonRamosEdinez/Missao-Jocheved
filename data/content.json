@@ -1,0 +1,12 @@
+{
+  "siteName": "Missão Jocheved",
+  "heroTitle": "MISSÃO JOCHEVED",
+  "heroSubtitle": "Uma base inicial para um site religioso, acolhedor e em evolução.",
+  "sections": [
+    { "title": "Texto dinâmico", "description": "Conteúdos que mudam com o tempo." },
+    { "title": "Chat", "description": "Canal para interação futura." },
+    { "title": "Newsletter", "description": "Inscrição para novidades." },
+    { "title": "Perguntas frequentes", "description": "FAQ organizado para o público." },
+    { "title": "Mídia", "description": "Áudios, vídeos e embeds externos." }
+  ]
+}
