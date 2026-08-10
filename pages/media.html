@@ -43,6 +43,23 @@
             <section id="ensino" class="conteudo ativo" role="tabpanel">
               <h2>Ensino</h2>
               <p>Teologia, estudos bíblicos e reflexões para aprofundar o entendimento.</p>
+
+              <div class="ensino-videos">
+                <div class="video-categories" role="tablist" aria-label="Categorias de ensino">
+                  <button class="video-category active" type="button" data-category="lado-do-bem" aria-selected="true">
+                    Lado do Bem
+                  </button>
+                </div>
+
+                <div class="video-results" id="video-results">
+                  <h3>Categorias de vídeos</h3>
+                  <p>Selecione uma categoria e, em seguida, os vídeos do YouTube serão carregados aqui.</p>
+
+                  <div class="video-list" data-source="db" aria-live="polite">
+                    <!-- Conteúdo de vídeos será inserido dinamicamente pelo JavaScript a partir do banco de dados -->
+                  </div>
+                </div>
+              </div>
             </section>
 
             <section id="testemunho" class="conteudo" role="tabpanel" hidden>
