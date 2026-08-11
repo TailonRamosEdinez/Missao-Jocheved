@@ -46,13 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
 		return aliases.some(alias => normalizeText(alias) === normalizedCategory) || normalizedCategory === normalizeText(sectionId);
 	}
 
-	function getYouTubeEmbedUrl(video) {
+	function getYouTubeVideoId(video) {
 		const rawValue = video?.youtube_id || '';
 		const match = rawValue.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/);
 		if (match) {
-			return `https://www.youtube.com/embed/${match[1]}`;
+			return match[1];
 		}
-		return rawValue ? `https://www.youtube.com/embed/${rawValue}` : '';
+		return rawValue || '';
+	}
+
+	function getYouTubeThumbnail(video) {
+		const videoId = getYouTubeVideoId(video);
+		return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
+	}
+
+	function getYouTubeWatchUrl(video) {
+		const videoId = getYouTubeVideoId(video);
+		return videoId ? `https://www.youtube.com/watch?v=${videoId}` : '';
 	}
 
 	function buildCategoryButtons(sectionId, videos) {
@@ -138,10 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		category.videos.forEach(video => {
 			const card = document.createElement('article');
 			card.className = 'video-card';
-			const embedUrl = getYouTubeEmbedUrl(video);
+			const thumbnailUrl = getYouTubeThumbnail(video);
+			const watchUrl = getYouTubeWatchUrl(video);
 			card.innerHTML = `
 				<div class="video-frame">
-					${embedUrl ? `<iframe src="${embedUrl}" title="${video.title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>` : '<div class="video-empty">Vídeo indisponível</div>'}
+					${thumbnailUrl && watchUrl ? `<a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="video-thumb-link"><img src="${thumbnailUrl}" alt="${video.title}" loading="lazy" /></a>` : '<div class="video-empty">Vídeo indisponível</div>'}
 				</div>
 				<div class="video-card-content">
 					<h4>${video.title}</h4>
