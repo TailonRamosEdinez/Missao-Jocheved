@@ -16,7 +16,7 @@ const SECTION_CATEGORY_LABELS = {
 };
 
 const SECTION_CATEGORY_ALIASES = {
-	ensino: ['ensino', 'lado do bem', 'estudo', 'estudos', 'teologia', 'reflexao', 'reflexões'],
+	ensino: ['ensino', 'lado do bem', 'estudo', 'estudos', 'teologia', 'reflexao', 'reflexões', 'judeo', 'visoes', 'visões', 'judeo com visoes diferentes'],
 	testemunho: ['testemunho', 'histórias de fé', 'historias de fe', 'historia de fe'],
 	beleza: ['beleza', 'beleza divina', 'contemplação', 'contemplacao']
 };
@@ -44,6 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		const aliases = SECTION_CATEGORY_ALIASES[sectionId] || [];
 		const normalizedCategory = normalizeText(category);
 		return aliases.some(alias => normalizeText(alias) === normalizedCategory) || normalizedCategory === normalizeText(sectionId);
+	}
+
+	function getYouTubeEmbedUrl(video) {
+		const rawValue = video?.youtube_id || '';
+		const match = rawValue.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/);
+		if (match) {
+			return `https://www.youtube.com/embed/${match[1]}`;
+		}
+		return rawValue ? `https://www.youtube.com/embed/${rawValue}` : '';
 	}
 
 	function buildCategoryButtons(sectionId, videos) {
@@ -129,9 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		category.videos.forEach(video => {
 			const card = document.createElement('article');
 			card.className = 'video-card';
+			const embedUrl = getYouTubeEmbedUrl(video);
 			card.innerHTML = `
 				<div class="video-frame">
-					<iframe src="https://www.youtube.com/embed/${video.youtube_id}" title="${video.title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					${embedUrl ? `<iframe src="${embedUrl}" title="${video.title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>` : '<div class="video-empty">Vídeo indisponível</div>'}
 				</div>
 				<div class="video-card-content">
 					<h4>${video.title}</h4>
