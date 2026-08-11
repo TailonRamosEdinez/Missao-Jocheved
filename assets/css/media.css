@@ -114,7 +114,65 @@
   .menu { height: auto; flex-direction: row; border-radius: 8px; }
   .menu-btn { padding: 12px 8px; font-size: 0.95rem; }
   .menu-indicator { display: none; }
+  .video-list { grid-template-columns: 1fr; }
 }
 
 .menu-btn:focus-visible { box-shadow: 0 0 0 3px rgba(200,180,150,0.18); }
+
+.video-results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.video-card {
+  background: #f8f5f0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.video-frame {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-card-content {
+  padding: 14px 16px 16px;
+}
+
+.video-card-content h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.video-card-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.video-empty {
+  padding: 18px;
+  border: 1px dashed rgba(0, 0, 0, 0.18);
+  border-radius: 12px;
+  color: #555;
+  background: #fcfaf7;
+}
 
