@@ -230,7 +230,3 @@ document.addEventListener('DOMContentLoaded', () => {
 	const first = buttons[0]?.dataset.target || 'ensino';
 	activate(first);
 });
-
-	const first = buttons[0]?.dataset.target || 'ensino';
-	activate(first);
-});
